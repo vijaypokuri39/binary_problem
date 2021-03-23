@@ -1,0 +1,37 @@
+<html>
+
+<body>
+    <p>Click on the button to check the results</p>
+    <input type="number" name="str" id="a">
+    <button onclick="BinaryReversal(document.getElementById('a').value)">Click</button>
+    <p>Please check console for detailed results</p>
+    <script>
+        function BinaryReversal(str) {
+            let finalBinary;
+            let bin = parseInt(str).toString(2);
+            console.log(bin, 'Entered input');
+            if (bin.length == 8) {
+                finalBinary = bin;
+            } else {
+                let num = 8 - bin.length
+                if (num > 0) {
+                    let str = '0';
+                    for (let i = 0; i < num; i++) {
+                        if (i > 0) {
+                            str = str + '0';
+                        }
+                    }
+                    finalBinary = str + bin;
+                }
+            }
+            console.log(finalBinary, 'Binary of the input value');
+            let reverseFinalBinary = finalBinary.split('').reverse().join('');
+            console.log(reverseFinalBinary, 'Reversing input binary');
+            let output = parseInt(reverseFinalBinary, 2);
+            console.log(output, 'Final reversed binary integer');
+            alert(output);
+        };
+    </script>
+</body>
+
+</html>
